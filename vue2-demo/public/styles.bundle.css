@@ -1,0 +1,27 @@
+.exclamations-viewer,
+.add-form-container {
+    margin-top: 20px;
+}
+.exclamation-list{
+    background-color: antiquewhite;
+    border:2px solid #222;
+    border-radius: 7px;
+}
+
+ .exclamation-list h1{
+     font-size: 1.5em;
+     text-align: center;
+ }
+
+ .exclamation:nth-child(2){
+     border-top: 1px solid #222222;
+ }
+ .exclamation{
+     padding:5px;
+     border-bottom:1px solid #222;
+ }
+ .user{
+     font-weight:bold;
+     max-resolution: 10px;
+     max-resolution: 5px;
+ }
