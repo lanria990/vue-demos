@@ -12,7 +12,7 @@
     "watch:js": "watchify src/app.js -t vueify -t babelify -p browserify-hmr -p [ vueify/plugins/extract-css -o public/styles.bundle.css ] -o public/app.bundle.js",
     "dev": "concurrently \"npm run serve\" \"npm run watch:js\""
   },
-  "author": "",
+  "author": "yangjl",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.11.4",
