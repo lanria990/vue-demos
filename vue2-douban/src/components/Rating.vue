@@ -18,10 +18,7 @@
           }
       },
     render(){
-          this.className = Math.ceil
-
-
-          (this.score/2)
+          this.className = Math.ceil(this.score/2)
     }
   }
 </script>
