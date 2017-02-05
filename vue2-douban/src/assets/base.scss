@@ -1,5 +1,5 @@
 $color-btn: #30A080 !default;
-$color-btn-active:#2a8c70 !default;
+$color-btn-active: #2a8c70 !default;
 
 html {
   font-size: 20px;
@@ -41,4 +41,34 @@ body {
   &.hover {
     background-color: $color-btn-active;
   }
+
 }
+
+.btn-link:link {
+  background: #1c8bd0;
+  color: #fff;
+}
+
+.list {
+  ul {
+    margin-top: -40px;
+  }
+  li {
+    display: inline-block;
+    zoom: 1;
+    width: 24.8%;
+    margin-top: 40px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+  .title {
+    line-height: 1.45;
+    font-size: 13px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+  }
+}
+
