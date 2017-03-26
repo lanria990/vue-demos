@@ -1,12 +1,22 @@
 $color-btn: #30A080 !default;
 $color-btn-active: #2a8c70 !default;
 
+
 html {
   font-size: 20px;
 }
 
 body {
   font: 14px/1.62 Helvetica, Arial, sans-serif;
+}
+.fix{}
+.fix:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+.fr{
+  float: right;
 }
 
 .mb4 {

@@ -1,10 +1,11 @@
 <template>
   <form @submit.prevent="onSubmit" class="login">
     <div class="mb4">
-      <input type="text" id="username" placeholder="邮箱/手机号" tabindex="1" v-model.trim="username"
-          @focus.in=""                  class="input-txt"/>
+      <input type="text" id="username" placeholder="邮箱/手机号" tabindex="1" v-model.trim="username" @focus.in=""
+             class="input-txt"/>
     </div>
-    <div class="mb4"><input type="password" id="password" placeholder="密码" tabindex="2" v-model.trim="password" class="input-txt"/>
+    <div class="mb4"><input type="password" id="password" placeholder="密码" tabindex="2" v-model.trim="password"
+                            class="input-txt"/>
     </div>
     <div class="mb4 pore">
       <input type="text" id="captcha" placeholder="验证码" tabindex="3" v-model.trim="captcha" class="input-txt"/>
@@ -16,33 +17,33 @@
       <a href="/accounts/register" class="btn">注册账号</a>
     </div>
   </form>
-
 </template>
 <style>
-  .login{
+  .login {
     width: 270px;
   }
-  .captcha-image{
+
+  .captcha-image {
     position: absolute;
-    top:3px;
+    top: 3px;
     width: 158px;
     height: 26px;
     right: 0;
   }
+
   .input-txt {
     width: 252PX;
     padding: 8px;
     border: 1px solid #ccc;
   }
-
 </style>
 
 
 <script>
-  // import HeaderComponent from './components/header.vue'
-  export default{
+
+  export default {
     name: 'login',
-    data () {
+    data() {
       return {
         username: '',
         password: '',
@@ -50,17 +51,16 @@
       }
     },
     methods: {
-      onSubmit (evt) {
-          if (this.)
+      onSubmit(evt) {
         console.log(evt)
       }
     },
-    computed:{
-      isValid () {
-        return Object.keys(validation).every((key)=> this.validation[key]);
+    computed: {
+      isValid() {
+        return Object.keys(validation).every((key) => this.validation[key]);
       },
-      validation () {
-        return{
+      validation() {
+        return {
           username: this.name.trim(),
           password: '',
           captcha: ''
