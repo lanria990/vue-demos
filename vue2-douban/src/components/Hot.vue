@@ -22,7 +22,7 @@
   }
 </style>
 <script>
-  import  {hotNotes} from '../service/api';
+
   export default{
     props: {
       items: {
@@ -31,13 +31,8 @@
 //          return []
 //        }
       }
-    },
-    created  (){
-      console.log('data');
-      hotNotes.then(data => {
-        console.log(data);
-      })
     }
+
   }
 
 </script>

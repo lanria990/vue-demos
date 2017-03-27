@@ -1,10 +1,10 @@
 {
-  "data":[
+  "data": [
     {
       "pathImg": "https://img3.doubanio.com/view/photo/albumcover/public/p403975235.webp",
       "path": "https://www.douban.com/photos/album/23634187/",
       "text": "",
-      "number": "110张照片",
+      "number": "110张照片"
     },
     {
       "pathImg": "https://img3.doubanio.com/view/photo/albumcover/public/p2446619485.webp",
@@ -28,21 +28,6 @@
       "pathImg": "",
       "path": "https://www.douban.com/photos/album/1644135529/",
       "text": ""
-    },
-    {
-      "pathImg": "",
-      "path": "https://www.douban.com/photos/album/1644135529/",
-      "text": "画专辑"
-    },
-    {
-      "pathImg": "",
-      "path": "https://www.douban.com/photos/album/1644043858/",
-      "text": ""
-    },
-    {
-      "pathImg": "",
-      "path": "https://www.douban.com/photos/album/1644043858/",
-      "text": "惊蛰北京"
     }
   ]
 }

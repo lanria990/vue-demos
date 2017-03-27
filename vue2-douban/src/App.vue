@@ -18,7 +18,7 @@
     <section>
       <more title="热点内容" path="https://www.douban.com/explore/"></more>
 
-      <div class="albums"><hot></hot></div>
+      <div class="albums"><hot :items="hot.items"></hot></div>
       <div class="notes"></div>
       <div class="aside"></div>
     </section>
@@ -31,7 +31,8 @@
   import Hello from './components/Hello'
   import Login from './components/Login'
   import  More from './components/More';
-  import Hot from './components/Hot'
+  import Hot from './components/Hot';
+  import  {hotInit,hotAlbums} from './service/api';
 //  require('assets/base.scss')
 //  require('assets/init.scss')
 
@@ -43,7 +44,20 @@
       Login,
       More,
       Hot
+    },
+    data(){
+        return {
+            hot:{items:[]}
+        }
+    },
+    created  (){
+//      console.log('data',hotNotes);
+      hotInit().then(data => {
+        this.hot.items = data[1].data;
+        console.log(data);
+      })
     }
+
   }
 </script>
 
