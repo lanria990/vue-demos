@@ -27,9 +27,9 @@
     props: {
       items: {
         type: Array,
-//        default(){
-//          return []
-//        }
+        default(){
+          return []
+        }
       }
     }
 
