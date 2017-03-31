@@ -20,9 +20,30 @@
 
       <div class="albums"><hot :items="hot.items"></hot></div>
       <div class="notes"><notes :items="hot.notes"></notes></div>
-      <div class="aside"></div>
-    </section>
+      <div class="aside fr" >
+        <div style="margin:10px 0px;" >
+          <a target="_blank" href="https://moment.douban.com/app/?source=anony_douban"><img width="265" src="https://img5.doubanio.com/img/files/file-1431585796.jpg"></a>
+        </div>
+        <more title="线上活动" path="https://www.douban.com/explore/"></more>
+        <li v-for="item in hot.asides">
+          <a :href="item.path">
+            {{item.title}}
+          </a>
+          <div v-if="item.desc" class="desc">
+            {{item.desc}}
+            <span v-if="item.num">{{item.num}}</span>
+          </div>
 
+        </li>
+      </div>
+    </section>
+    <section class="movie">
+      <div class="sidenav"><appNav></appNav></div>
+      <div class="side">
+        <more title="正在热映" path="https://movie.douban.com/showtimes/"></more>
+      </div>
+      <div class="main"></div>
+    </section>
   </div>
 </template>
 
@@ -34,6 +55,7 @@
   import Hot from './components/Hot';
   import Notes from './components/Notes';
   import  {hotInit,hotAlbums} from './service/api';
+  import AppNav from './components/AppNav.vue';
 //  require('assets/base.scss')
 //  require('assets/init.scss')
 
@@ -44,7 +66,7 @@
       Hello,
       Login,
       More,
-      Hot,Notes
+      Hot,Notes,AppNav
     },
     data(){
         return {
@@ -54,8 +76,9 @@
     created  (){
 //      console.log('data',hotNotes);
       hotInit().then(data => {
+        this.hot.notes = data[0].data;
         this.hot.items = data[1].data;
-        this.hot.notes = data[0].data
+        this.hot.asides = data[2].data;
         console.log(data);
       })
     }
@@ -107,6 +130,10 @@
   }
   .aside{
     width: 256px;
+    float: right;
+  }
+  .movie{
+    background: #f7f7f7;
   }
 </style>
 <style src="assets/base.scss"></style>
