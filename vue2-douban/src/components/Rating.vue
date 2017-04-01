@@ -11,14 +11,12 @@
   export  default{
       props:{
           score:{
-              type:Number,
+              type:String,
               default(){
                   return 0
               }
           }
-      },
-    render(){
-          this.className = Math.ceil(this.score/2)
-    }
+      }
+
   }
 </script>

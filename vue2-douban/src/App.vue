@@ -38,13 +38,15 @@
       </div>
     </section>
     <section class="movie">
-      <div style="position: absolute;background: #f7f7f7;right: 0;    left: 0; min-height: 200px;z-index: -1">
-      </div>
-      <div class="sidenav"><appNav></appNav></div>
+      <!--<div style="position: absolute;background: #f7f7f7;right: 0;    left: 0; min-height: 200px;z-index: -1">-->
+      <!--</div>-->
+      <div class="sidenav fl"><appNav></appNav></div>
       <div class="side">
         <more title="正在热映" path="https://movie.douban.com/showtimes/"></more>
+        <movie :items="movies.movies"></movie>
       </div>
-      <div class="main"></div>
+      <div class="main">
+      </div>
     </section>
   </div>
 </template>
@@ -52,6 +54,7 @@
 <script>
   import HeadNav from './components/Head'
   import Hello from './components/Hello'
+  import Movie from './components/Movie'
   import Login from './components/Login'
   import  More from './components/More';
   import Hot from './components/Hot';
@@ -68,12 +71,12 @@
       Hello,
       Login,
       More,
-      Hot,Notes,AppNav
+      Hot,Notes,AppNav,Movie
     },
     data(){
         return {
             hot:{items:[]},
-            movies:{}
+            movies:{movies:[]}
         }
     },
     created  (){
@@ -85,10 +88,7 @@
         console.log(data);
       })
       Utils.movieInit().then(data => {
-        this.hot.notes = data[0].data;
-        this.hot.items = data[1].data;
-        this.hot.asides = data[2].data;
-        console.log(data);
+        this.movies.movies = data[0].data;
       })
     }
 

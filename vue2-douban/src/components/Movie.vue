@@ -1,25 +1,34 @@
 <template>
-  <div class="list">
+  <div class="list fix">
     <ul>
       <li v-for="item in items">
-        <a href="{{item.url}}" class="pic">
-          <img src="{{item.src}}" alt="{{item.title}}"/>
+        <a :href="item.path" class="pic">
+          <img :src="item.pathImg" :alt="item.title"/>
         </a>
-        <a href="{{item.url}}" class="title">{{item.title}}</a>
-        <rating :score="item.score"></rating>
-        <a href="{{item.btnUrl}}" class="btn btn-link">{{item.brnText}}</a>
+        <a :href="item.url" class="title">{{item.title}}</a>
+        <rating :score="item.rating"></rating>
+        <a :href="item.pathTicket" class="btn btn-link">{{item.brnText}}</a>
       </li>
     </ul>
   </div>
 </template>
 
 
-<style lang="sass">
+<style  >
 
-  img {
+  .img {
     width: 100px;
   }
-
+  .list li {
+    float: left;
+    width: 24.8%;
+    margin-top: 40px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
   .movie-list .pic {
     height: 145px;
     overflow: hidden;
@@ -28,24 +37,24 @@
 </style>
 
 <script>
-  import  rating from  './Rating'
+  import  Rating from  './Rating'
   export  default {
     props: {
       items: {
-        type: Object,
+        type: Array,
         default(){
-          console.error('items must be Object');
-        }
+          return [];
+        },
       },
       brnText: {
         type: String,
         default(){
-              return '选座购票';
+          return '选座购票';
         }
       }
     },
     components: {
-      rating
+      Rating
     }
   }
 
