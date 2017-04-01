@@ -38,6 +38,8 @@
       </div>
     </section>
     <section class="movie">
+      <div style="position: absolute;background: #f7f7f7;right: 0;    left: 0; min-height: 200px;z-index: -1">
+      </div>
       <div class="sidenav"><appNav></appNav></div>
       <div class="side">
         <more title="正在热映" path="https://movie.douban.com/showtimes/"></more>
@@ -54,7 +56,7 @@
   import  More from './components/More';
   import Hot from './components/Hot';
   import Notes from './components/Notes';
-  import  {hotInit,hotAlbums} from './service/api';
+  import  * as Utils from './service/api';
   import AppNav from './components/AppNav.vue';
 //  require('assets/base.scss')
 //  require('assets/init.scss')
@@ -70,12 +72,19 @@
     },
     data(){
         return {
-            hot:{items:[]}
+            hot:{items:[]},
+            movies:{}
         }
     },
     created  (){
 //      console.log('data',hotNotes);
-      hotInit().then(data => {
+      Utils.hotInit().then(data => {
+        this.hot.notes = data[0].data;
+        this.hot.items = data[1].data;
+        this.hot.asides = data[2].data;
+        console.log(data);
+      })
+      Utils.movieInit().then(data => {
         this.hot.notes = data[0].data;
         this.hot.items = data[1].data;
         this.hot.asides = data[2].data;

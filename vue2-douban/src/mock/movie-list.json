@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "path": "https://movie.douban.com/subject/26606743/",
+      "pathImg": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2448676053.webp",
+      "title": "嫌疑人X的献身",
+      "pathTicket": "https://movie.douban.com/subject/26606743/cinema/",
+      "rating": "6.7"
+    },
+    {
+      "path": "https://movie.douban.com/subject/26828019/",
+      "pathImg": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2450444730.webp",
+      "title": "有完没完",
+      "pathTicket": "https://movie.douban.com/subject/26828019/cinema/",
+      "rating": "5.4"
+    },
+    {
+      "path": "https://movie.douban.com/subject/26948814/",
+      "pathImg": "https://img5.doubanio.com/view/movie_poster_cover/spst/public/p2452283136.webp",
+      "title": "怨灵宿舍之白纸女生",
+      "pathTicket": "https://movie.douban.com/subject/26948814/cinema/",
+      "rating": "暂无评分"
+    },
+    {
+      "path": "https://movie.douban.com/subject/26309788/",
+      "pathImg": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2436030518.webp",
+      "title": "金刚：骷髅岛",
+      "pathTicket": "https://movie.douban.com/subject/26309788/cinema/",
+      "rating": "6.9"
+    },
+    {
+      "path": "https://movie.douban.com/subject/26616690/",
+      "pathImg": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2453197648.webp",
+      "title": "非凡任务",
+      "pathTicket": "https://movie.douban.com/subject/26616690/cinema/",
+      "rating": "6.8"
+    },
+    {
+      "path": "https://movie.douban.com/subject/26602933/",
+      "pathImg": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2445601403.webp",
+      "title": "绑架者",
+      "pathTicket": "https://movie.douban.com/subject/26602933/cinema/",
+      "rating": "5.2"
+    },
+    {
+      "path": "https://movie.douban.com/subject/25900945/",
+      "pathImg": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p2417948644.webp",
+      "title": "美女与野兽",
+      "pathTicket": "https://movie.douban.com/subject/25900945/cinema/",
+      "rating": "7.4"
+    },
+    {
+      "path": "https://movie.douban.com/subject/6873143/",
+      "pathImg": "https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2432493858.webp",
+      "title": "一条狗的使命",
+      "pathTicket": "https://movie.douban.com/subject/6873143/cinema/",
+      "rating": "7.7"
+    }
+  ]
+}

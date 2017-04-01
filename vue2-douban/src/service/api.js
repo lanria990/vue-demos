@@ -4,7 +4,7 @@ import  axios from 'axios';
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
   console.log(response.status)
-  if (response.status!=200){
+  if (response.status != 200) {
     return Promise.reject(response.data);
   }
   return response.data;
@@ -23,9 +23,22 @@ export function hotAlbums() {
 }
 
 export function hotInit() {
-  let urls=['mock/hot-notes.json','mock/hot-albums.json','mock/hot-aside.json'];
-  return Promise.all(Object.keys(urls).map((key)=>axios.get(urls[key])))
+  let urls = ['mock/hot-notes.json', 'mock/hot-albums.json', 'mock/hot-aside.json'];
+  return Promise.all(Object.keys(urls).map((key) => axios.get(urls[key])))
 }
-// var _li =document.querySelectorAll('#anony-movie .side-links li')
-// var aaa = Array.from(_li).map(item=>{console.log(item);return item.querySelector('a')&&{path:item.querySelector('a').href,title:item.querySelector('a').text}})
+
+export function movieInit() {
+  let urls = [ 'mock/movie-list.json'];
+  return Promise.all(Object.keys(urls).map((key) => axios.get(urls[key])))
+}
+// var _li = document.querySelectorAll('.movie-list li')
+// var aaa = Array.from(_li).map(item => {
+//   return item.querySelector('a') && {
+//       path: item.querySelector('.pic').querySelector('a').href,
+//       pathImg: item.querySelector('img').src,
+//       title: item.querySelector('img').alt,
+//       pathTicket: item.querySelector('.bn-ticket').href,
+//       rating: item.querySelector('.rating').text
+//     }
+// })
 // JSON.stringify(aaa)
