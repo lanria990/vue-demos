@@ -1,6 +1,5 @@
 <template>
-  <div class="">
-    <ul class="notes">
+    <ul >
       <li v-for="item in items">
         <a :href="item.path">
           {{item.title}}
@@ -9,7 +8,6 @@
         <p v-if="item.desc">{{item.desc}}</p>
       </li>
     </ul>
-  </div>
 </template>
 <style scope>
   .notes {

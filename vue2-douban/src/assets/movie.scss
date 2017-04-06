@@ -1,0 +1,58 @@
+.movie {
+  img {
+    width: 100px;
+  }
+  .pic {
+    height: 145px;
+    overflow: hidden;
+    display: block;
+  }
+
+}
+
+.list {
+  ul {
+    margin-top: -40px;
+  }
+  li {
+    display: inline-block;
+    width: 24.8%;
+    font-size: 12px;
+    margin-top: 40px;
+    vertical-align: top;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+  .title {
+    line-height: 1.45;
+    font-size: 13px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+  }
+  .pic {
+    margin-bottom: 10px;
+  }
+}
+
+.section-title a:link, .section-title a:visited {
+  font-size: 24px;
+}
+.movie-charts{
+  li {
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    list-style-type: decimal;
+    list-style-position: inside;
+    border-bottom: 1px solid #eaeaea;
+  }
+  a {
+    margin-left: 5px;
+  }
+}
+.tags li {
+  display: inline-block;
+  width: 4em;
+  margin-top: 4px;
+  text-align: left;
+}

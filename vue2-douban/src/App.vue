@@ -8,18 +8,16 @@
       <div class="fr banner">
         <login></login>
       </div>
-
     </section>
     <!--广告位-->
     <section class="ads">
       <img src="https://img3.doubanio.com/view/dale-online/dale_ad/public/98f861704c78c07.jpg" border="0" width="950" height="90" >
     </section>
     <!---->
-    <section>
+    <section class="fix">
       <more title="热点内容" path="https://www.douban.com/explore/"></more>
-
       <div class="albums"><hot :items="hot.items"></hot></div>
-      <div class="notes"><notes :items="hot.notes"></notes></div>
+
       <div class="aside fr" >
         <div style="margin:10px 0px;" >
           <a target="_blank" href="https://moment.douban.com/app/?source=anony_douban"><img width="265" src="https://img5.doubanio.com/img/files/file-1431585796.jpg"></a>
@@ -36,23 +34,24 @@
 
         </li>
       </div>
+      <div class="notes"><notes :items="hot.notes"></notes></div>
     </section>
-    <section class="movie">
-      <!--<div style="position: absolute;background: #f7f7f7;right: 0;    left: 0; min-height: 200px;z-index: -1">-->
-      <!--</div>-->
-      <div class="sidenav fl"><appNav></appNav></div>
-      <div class="side">
-        <more title="正在热映" path="https://movie.douban.com/showtimes/"></more>
-        <movie :items="movies.movies"></movie>
-      </div>
-      <div class="main">
-      </div>
+    <section class="movie__content">
+        <movie :movies="movies"></movie>
+    </section>
+    <!--广告位-->
+    <section class="ads">
+      <img src="https://img3.doubanio.com/view/dale-online/dale_ad/public/9375f20e40653a9.jpg" border="0" width="950" height="90" >
+    </section>
+    <section>
+      <appFooter></appFooter>
     </section>
   </div>
 </template>
 
 <script>
   import HeadNav from './components/Head'
+  import AppFooter from './components/Footer'
   import Hello from './components/Hello'
   import Movie from './components/Movie'
   import Login from './components/Login'
@@ -60,7 +59,7 @@
   import Hot from './components/Hot';
   import Notes from './components/Notes';
   import  * as Utils from './service/api';
-  import AppNav from './components/AppNav.vue';
+//  import AppNav from './components/AppNav.vue';
 //  require('assets/base.scss')
 //  require('assets/init.scss')
 
@@ -71,7 +70,7 @@
       Hello,
       Login,
       More,
-      Hot,Notes,AppNav,Movie
+      Hot,Notes,Movie,AppFooter
     },
     data(){
         return {
@@ -89,6 +88,8 @@
       })
       Utils.movieInit().then(data => {
         this.movies.movies = data[0].data;
+        this.movies.tags = data[1].data;
+        this.movies.charts = data[2].data;
       })
     }
 
@@ -140,10 +141,31 @@
   .aside{
     width: 256px;
     float: right;
+    text-align: left;
   }
-  .movie{
+  .side-nav {
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+  }
+
+  section:nth-child(2n+1) {
+    padding: 40px 0 20px;
     background: #f7f7f7;
   }
+  .side{
+    width: 265px;
+  }
+   .main {
+    overflow: hidden;
+    zoom: 1;
+  }
+  .movie-charts{
+    text-align: left;
+  }
 </style>
-<style src="assets/base.scss"></style>
-<style src="assets/init.scss"></style>
+<style lang="sass" >
+  @import '/assets/init.scss';
+  @import '/assets/base.scss';
+</style>
+

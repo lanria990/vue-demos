@@ -50,7 +50,7 @@
     cursor: pointer;
   }
 
-  ul {
+  .nav-links {
     display: inline-block;
   }
 

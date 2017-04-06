@@ -10,7 +10,7 @@
     <ul class="app-list"></ul>
   </div>
 </template>
-<style scope>
+<style scoped>
   .pics {
     float: left;
     margin: 10px 0 0 10px;

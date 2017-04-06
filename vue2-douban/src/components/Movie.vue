@@ -1,61 +1,64 @@
 <template>
-  <div class="list fix">
-    <ul>
-      <li v-for="item in items">
-        <a :href="item.path" class="pic">
-          <img :src="item.pathImg" :alt="item.title"/>
-        </a>
-        <a :href="item.url" class="title">{{item.title}}</a>
-        <rating :score="item.rating"></rating>
-        <a :href="item.pathTicket" class="btn btn-link">{{item.brnText}}</a>
-      </li>
-    </ul>
+  <div class="movie fix">
+    <div class="side-nav fl">
+      <appNav></appNav>
+    </div>
+    <div class="fr side">
+      <div class="tags mb30">
+        <more :title="categories.tags.title" :path="categories.tags.path"></more>
+        <notes :items="movies.tags"></notes>
+      </div>
+      <div class="movie-charts mb30">
+        <more :title="categories.charts.title" :path="categories.charts.path"></more>
+        <notes :items="movies.charts"></notes>
+      </div>
+    </div>
+    <div class="main">
+      <more :title="categories.movie.title" :path="categories.movie.path"></more>
+      <list :items="movies.movies" :btnText="btnText"></list>
+    </div>
   </div>
 </template>
-
-
-<style  >
-
-  .img {
-    width: 100px;
-  }
-  .list li {
-    float: left;
-    width: 24.8%;
-    margin-top: 40px;
-    vertical-align: top;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: normal;
-    word-spacing: normal;
-  }
-  .movie-list .pic {
-    height: 145px;
-    overflow: hidden;
-    display: block;
-  }
+<style lang="sass" >
+  @import '../assets/movie.scss';
 </style>
 
 <script>
-  import  Rating from  './Rating'
+  import List from './MovieList.vue';
+  import appNav from './AppNav.vue';
+  import  More from './More';
+  import  Notes from './Notes';
+
   export  default {
-    props: {
-      items: {
-        type: Array,
-        default(){
-          return [];
+    props: ["movies"],
+    data (){
+      return {
+        categories: {
+          tags: {
+            title: '影片分类',
+            path: 'https://www.douban.com/explore/'
+          },
+          charts: {
+            title: '近期热门',
+            path: 'https://www.douban.com/explore/'
+          },
+          movie: {
+            title: '正在热映',
+            path: 'https://www.douban.com/explore/'
+          }
         },
-      },
-      brnText: {
-        type: String,
-        default(){
-          return '选座购票';
-        }
+        btnText: '选座购票'
+      }
+    },
+    watch: {
+      'movies.movies'(v){
+        console.log(v)
       }
     },
     components: {
-      Rating
+      List, appNav, More, Notes
     }
   }
 
 </script>
+

@@ -28,7 +28,7 @@ export function hotInit() {
 }
 
 export function movieInit() {
-  let urls = [ 'mock/movie-list.json'];
+  let urls = [ 'mock/movie-list.json','mock/movie-tag.json','mock/movie-charts.json'];
   return Promise.all(Object.keys(urls).map((key) => axios.get(urls[key])))
 }
 // var _li = document.querySelectorAll('.movie-list li')
